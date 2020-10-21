@@ -1,0 +1,27 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>Edit user info</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/edit/{{user.id}}" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="fullname"  value="{{user.fullname}}" class="form-control" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="username"  value="{{user.username}}" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="description" rows="5" class="form-control">{{user.description}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">Edit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
