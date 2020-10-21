@@ -1,2 +1,16 @@
-# pruebanodejs
-This is a repo for the test result
+# PruebaNodeJs
+
+## Project setup
+```
+npm install
+```
+
+### For Local test
+```
+npm run dev
+```
+
+### For Production
+```
+npm start
+```
