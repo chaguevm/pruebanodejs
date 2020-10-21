@@ -1,0 +1,30 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>Edit Contact</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/editcontact" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="first_name"  placeholder="First Name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="last_name"  placeholder="Last Name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email"  placeholder="Email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="number"  placeholder="Number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">Save Contact</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
