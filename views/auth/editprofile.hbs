@@ -6,15 +6,14 @@
                     <h3>Edit user info</h3>
                 </div>
                 <div class="card-body">
-                    <form action="/edit/{{user.id}}" method="POST">
+                    <form action="/edituser/" method="POST">
                         <div class="form-group">
+                            <label for="fullname">Full name</label>
                             <input type="text" name="fullname"  value="{{user.fullname}}" class="form-control" autofocus>
                         </div>
                         <div class="form-group">
+                            <label for="username">Username</label>
                             <input type="text" name="username"  value="{{user.username}}" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="description" rows="5" class="form-control">{{user.description}}</textarea>
                         </div>
                         <div class="form-group">
                             <button class="btn btn-success btn-block">Edit</button>
@@ -24,4 +23,37 @@
             </div>
         </div>
     </div>
+    <br><br>
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>Set a new Password</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/editpassword" method="POST">
+                        <div class="form-group">
+                            <input type="password" name="password1"  placeholder="Password" id="password1" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password2" placeholder="Confirm Password" id="password2" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+    $('#password1, #password2').on('keyup', function () {
+    if ($('#password1').val() == $('#password2').val()) {
+        $('#password1, #password2').removeClass('is-invalid');
+        $('#password1, #password2').addClass('is-valid');
+    } else
+        $('#password1, #password2').addClass('is-invalid');
+    });
+</script>

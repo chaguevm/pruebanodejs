@@ -64,4 +64,31 @@ router.post('/newpassword', async (req, res) => {
     res.render('auth/login', {success: req.flash('success')});
 });
 
+router.get('/edituser', (req, res) => {
+    res.render('auth/editprofile');
+});
+
+router.post('/edituser', async (req, res) => {
+    const userId = req.user.id;
+    const query = `UPDATE users SET
+        username = '${req.body.username}',
+        fullname = '${req.body.fullname}'
+    `;
+
+    const newUser = await pool.query(query);
+    req.flash('success', 'The user had been updated');
+    res.redirect('/');
+});
+
+router.post('/editpassword', async (req, res) => {
+    const newpass = await helpers.encryptPassword(req.body.password1);
+    const query = `UPDATE users SET
+        password = '${newpass}'
+        WHERE id = ${req.user.id}
+    `;
+    const newUser = await pool.query(query);
+    req.flash('success', 'The password had been changed');
+    res.redirect('/');
+});
+
 module.exports = router; 
