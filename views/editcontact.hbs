@@ -6,21 +6,23 @@
                     <h3>Edit Contact</h3>
                 </div>
                 <div class="card-body">
-                    <form action="/editcontact" method="POST">
+                    <form action="/edit" method="POST">
+                        <input type="hidden" name="id" value="{{contact.id}}">
                         <div class="form-group">
-                            <input type="text" name="first_name"  placeholder="First Name" class="form-control">
+                            <input type="text" name="first_name"  value="{{contact.first_name}}" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="last_name"  placeholder="Last Name" class="form-control">
+                            <input type="text" name="last_name"  value="{{contact.last_name}}" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email"  placeholder="Email" class="form-control">
+                            <input type="email" name="email"  value="{{contact.email}}" class="form-control" required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="number"  placeholder="Number" class="form-control">
+                            <input type="text" name="number"  onkeyup="this.value=this.value.replace(/[^\d]/,'')" value="{{contact.number}}" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-success btn-block">Save Contact</button>
+                            <button class="btn btn-success btn-block">Edit Contact</button>
                         </div>
                     </form>
                 </div>

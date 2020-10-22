@@ -8,16 +8,17 @@
                 <div class="card-body">
                     <form action="/newcontact" method="POST">
                         <div class="form-group">
-                            <input type="text" name="first_name"  placeholder="First Name" class="form-control">
+                            <input type="text" name="first_name"  placeholder="First Name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="last_name"  placeholder="Last Name" class="form-control">
+                            <input type="text" name="last_name"  placeholder="Last Name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email"  placeholder="Email" class="form-control">
+                            <input type="email" name="email"  placeholder="Email" class="form-control" required 
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="number"  placeholder="Number" class="form-control">
+                            <input type="text" name="number" onkeyup="this.value=this.value.replace(/[^\d]/,'')" placeholder="Number" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <button class="btn btn-success btn-block">Save Contact</button>

@@ -13,6 +13,12 @@ const passport = require('passport');
 const app = express();
 require('./lib/passport');
 
+//Handlebars helpers for increment in 1 the index for {{#each}} method
+Handlebars.registerHelper("inc", function(value, options)
+{
+    return parseInt(value) + 1;
+});
+
 //Config
 app.set('port', process.env.PORT || 3000); //Port definition
 app.set('views',path.join(__dirname, 'views')); //Set the view route
