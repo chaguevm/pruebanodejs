@@ -12,7 +12,7 @@ let transporter = nodemailer.createTransport({
     secure: false, // true for 465, false for other ports
     auth: {
       user: 'apikey', // generated sengrid user
-      pass: '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', // generated sengrid password
+      pass: '', // generated sengrid password
     },
   });
 
