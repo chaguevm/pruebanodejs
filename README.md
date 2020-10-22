@@ -15,6 +15,11 @@ This project use
 ```
 npm install
 ```
+## DB Setup
+
+The db folder have a file 'contactlist.sql'
+Must create a database with the name contactlist and import this file
+in keys.js must be change the access to mysql
 
 ### For Local test
 ```
