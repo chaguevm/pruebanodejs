@@ -21,6 +21,15 @@ The db folder have a file 'contactlist.sql'
 Must create a database with the name contactlist and import this file
 in keys.js must be change the access to mysql
 
+## Email Setup
+```
+For send email is necesary a sendgrid account and get an api key and setup in /routes/index.js on transporter definition of nodemailer edit this lines
+    auth: {
+      user: 'apikey', // generated sengrid user
+      pass: '', // generated sengrid password
+    },
+```
+
 ### For Local test
 ```
 npm run dev
@@ -30,3 +39,7 @@ npm run dev
 ```
 npm start
 ```
+
+# Examn Responsive
+
+The result for the second task is in the 'examn' folder
